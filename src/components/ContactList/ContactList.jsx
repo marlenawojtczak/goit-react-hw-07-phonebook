@@ -3,9 +3,11 @@ import { List, Item, Button } from './ContactList.styled';
 import { selectFilteredContacts } from '../../redux/selectors';
 import { deleteContact } from '../../redux/operations';
 
-const ContactList = () => {
+export const ContactList = () => {
   const dispatch = useDispatch();
   const filteredContacts = useSelector(selectFilteredContacts);
+
+  console.log('Wartość filteredContacts:', filteredContacts);
 
   return (
     <List>
@@ -24,5 +26,3 @@ const ContactList = () => {
     </List>
   );
 };
-
-export default ContactList;

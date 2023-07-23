@@ -5,11 +5,11 @@ import {
   selectError,
   selectIsLoading,
 } from '../../redux/selectors';
-import { fetchContacts } from 'redux/operations';
+import { fetchContacts } from '../../redux/operations';
 import { Container, Content, AppTitle, ListTitle } from './App.styled';
 import { ContactForm } from '../ContactForm/ContactForm';
-import ContactList from '../ContactList/ContactList';
-import Filter from '../Filter/Filter';
+import { ContactList } from '../ContactList/ContactList';
+import { Filter } from '../Filter/Filter';
 import { Loader } from '../Loader/Loader';
 
 export const App = () => {
@@ -32,7 +32,6 @@ export const App = () => {
         {isLoading && <Loader />}
         {error && <p>{error}</p>}
         {contacts.length > 0 && <ContactList />}
-        <ContactList />
       </Content>
     </Container>
   );
